@@ -1,0 +1,15 @@
+{
+  "name": "template-go",
+  "version": "0.0.1",
+  "description": "SAO template for golang",
+  "repository": {
+    "url": "zcong1993/template-go",
+    "type": "git"
+  },
+  "author": "zcong1993 <1005997919@qq.com> (github.com/zcong1993)",
+  "license": "MIT",
+  "files": [
+    "sao.js",
+    "template"
+  ]
+}
