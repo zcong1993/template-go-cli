@@ -18,7 +18,7 @@ build:
     - script:
         name: go build
         code: |
-          go build ./...<% if (test) { %>
+          go build ./...<% if (test === 'wercker') { %>
 
     # Build the test
     - script:

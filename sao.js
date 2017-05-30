@@ -26,13 +26,19 @@ module.exports = {
       store: true
     },
     test: {
-      message: 'Need test ?',
-      type: 'confirm',
-      default: true
+      message: 'Choose test :',
+      type: 'list',
+      choices: [
+        'travis',
+        'wercker',
+        'none'
+      ]
     }
   },
   filters: {
-    'main_test.go': 'test'
+    'main_test.go': 'test !== \'none\'',
+    '.travis.yml': 'test === \'travis\'',
+    'wercker.yml': 'test === \'wercker\''
   },
   showTip: false,
   gitInit: true,
