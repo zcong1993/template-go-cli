@@ -15,8 +15,7 @@
     },
     "cli": {
       "message": "Is a cli project ?",
-      "type": "confirm",
-      "default": "false"
+      "type": "confirm"
     },
     "test": {
       "message": "Choose test :",
