@@ -1,27 +1,17 @@
 # template-go
 
-> SAO template for golang
+> init template for golang
 
 ## Usage
 
-Install [SAO](https://github.com/egoist/sao) first.
+Install [init](https://github.com/zcong1993/init) first.
+
+See `init`'s  README.md.
+
+### Use this template
 
 ```bash
-yarn global add sao
-# or
-npm i -g sao
-```
-
-### From git
-
-```bash
-sao zcong1993/template-go my-project
-```
-
-### From npm
-
-```bash
-sao go my-project
+$ init -i zcong1993/template-go ./your/path
 ```
 
 ## License

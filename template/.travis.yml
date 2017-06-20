@@ -4,4 +4,9 @@ go:
   - 1.8
 
 install:
-  - go get -t -v ./...
+  - go get -t -v ./...{{if .cli}}
+  - go get -v github.com/mitchellh/gox
+
+script:
+  - chmod +x ./build.sh
+  - make build{{end}}

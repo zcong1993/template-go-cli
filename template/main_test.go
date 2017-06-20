@@ -1,4 +1,4 @@
-package <%= name %>
+package {{if .cli}}main{{else}}{{.name}}{{end}}
 
 import (
 	"reflect"
