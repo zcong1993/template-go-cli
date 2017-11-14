@@ -1,6 +1,6 @@
 #!/bin/bash
 set -ev
-NAME={{.name}}
+NAME=<%= name %>
 XC_ARCH=${XC_ARCH:-amd64}
 XC_OS=${XC_OS:-darwin linux windows}
 
@@ -13,4 +13,4 @@ gox \
     -parallel=-1 \
     -os="${XC_OS}" \
     -arch="${XC_ARCH}" \
-    -output "bin/${NAME}-{{`{{.OS}}`}}"
+    -output "bin/${NAME}-{{.OS}}"

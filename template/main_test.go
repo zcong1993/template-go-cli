@@ -1,4 +1,4 @@
-package {{if .cli}}main{{else}}{{.name}}{{end}}
+package <% if (cli) { %>main<% } else { %><%= name %><% } %>
 
 import (
 	"reflect"
