@@ -20,6 +20,10 @@ $ sao zcong1993/template-go my-project
 $ sao zcong1993/template-go my-project --install
 ```
 
+### auto build
+
+Auto build depends on travis, install [travis](https://github.com/travis-ci/travis.rb), then use `$ travis encrypt YOUR_GITHUB_TOKEN --add deploy.api_key` config the `encrypted api key`
+
 ## License
 
 MIT &copy; [zcong1993](github.com/zcong1993)

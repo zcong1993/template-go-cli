@@ -41,7 +41,13 @@ module.exports = {
       choices: ['travis', 'wercker', 'none'],
       type: 'list',
       default: 'none'
-    }
+    },
+    autobuild: {
+      message: 'Need auto build?',
+      type: 'confirm',
+      default: false,
+      when: answers => answers.cli && answers.test === 'travis'
+    },
   },
   move: {
     'gitignore': '.gitignore'
