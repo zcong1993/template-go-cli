@@ -36,9 +36,14 @@ module.exports = {
       type: 'confirm',
       default: false
     },
+    godep: {
+      message: 'Use go dep?',
+      type: 'confirm',
+      default: true
+    },
     test: {
       message: 'Choose test :',
-      choices: ['travis', 'wercker', 'none'],
+      choices: ['travis', 'wercker', 'circleci', 'none'],
       type: 'list',
       default: 'none'
     },
@@ -47,7 +52,7 @@ module.exports = {
       type: 'confirm',
       default: false,
       when: answers => answers.cli && answers.test === 'travis'
-    },
+    }
   },
   move: {
     'gitignore': '.gitignore'
@@ -56,6 +61,7 @@ module.exports = {
     'main_test.go': 'test !== "none"',
     '.travis.yml': 'test === "travis"',
     'wercker.yml': 'test === "wercker"',
+    '.circleci.yml': 'test === "circleci"',
     'build.sh': 'cli',
     'Makefile': 'cli'
   },

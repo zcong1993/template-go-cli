@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  build:
+    docker:
+      # CircleCI Go images available at: https://hub.docker.com/r/circleci/golang/
+      - image: circleci/golang:1.9
+
+    working_directory: $GOPATH/src/github.com/<%= username %>/<%= name %>
+
+    steps:
+      - checkout
+      - run:
+          name: get deps
+          command: |<% if (godep) { %>
+            go get -u -v github.com/golang/dep/cmd/dep
+            dep ensure<% } else { %>
+            go get -t -d -v ./...<% } %>
+            go get -u -v github.com/mitchellh/gox
+      - run:
+          name: build
+          command: |
+            chmod +x ./build.sh
+            make build
