@@ -61,7 +61,7 @@ module.exports = {
     'main_test.go': 'test !== "none"',
     '.travis.yml': 'test === "travis"',
     'wercker.yml': 'test === "wercker"',
-    '.circleci.yml': 'test === "circleci"',
+    'circle.yml': 'test === "circleci"',
     'build.sh': 'cli',
     'Makefile': 'cli'
   },
