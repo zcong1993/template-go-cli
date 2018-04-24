@@ -42,27 +42,17 @@ module.exports = {
       default: true
     },
     test: {
-      message: 'Choose test :',
-      choices: ['travis', 'wercker', 'circleci', 'none'],
-      type: 'list',
-      default: 'none'
-    },
-    autobuild: {
-      message: 'Need auto build?',
+      message: 'Use a ci?',
       type: 'confirm',
-      default: false,
-      when: answers => answers.cli && answers.test === 'travis'
+      default: true
     }
   },
   move: {
     'gitignore': '.gitignore'
   },
   filters: {
-    'main_test.go': 'test !== "none"',
-    '.travis.yml': 'test === "travis"',
-    'wercker.yml': 'test === "wercker"',
-    'circle.yml': 'test === "circleci"',
-    'build.sh': 'cli',
+    'main_test.go': 'test',
+    'circle.yml': 'test',
     'Makefile': 'cli'
   },
   showTip: true,
