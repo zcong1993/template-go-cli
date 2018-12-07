@@ -2,12 +2,8 @@ generate:
 	@go generate ./...
 .PHONY: generate
 
-install:
-	@go get -u -v github.com/golang/dep/cmd/dep
-	@dep ensure
-
 build: generate
-	@echo "====> Build telnetor cli"
+	@echo "====> Build <%= name %> cli"
 	@go build -o ./bin/<%= name %> main.go
 .PHONY: build
 

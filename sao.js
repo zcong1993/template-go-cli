@@ -35,25 +35,15 @@ module.exports = {
       message: 'Is a cli project?',
       type: 'confirm',
       default: false
-    },
-    godep: {
-      message: 'Use go dep?',
-      type: 'confirm',
-      default: true
-    },
-    test: {
-      message: 'Use a ci?',
-      type: 'confirm',
-      default: true
     }
   },
   move: {
     'gitignore': '.gitignore'
   },
   filters: {
-    'main_test.go': 'test',
     'circle.yml': 'test',
-    'Makefile': 'cli'
+    'Makefile': 'cli',
+    '.goreleaser.yml': 'cli'
   },
   showTip: true,
   gitInit: true,
