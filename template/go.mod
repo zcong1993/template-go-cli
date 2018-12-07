@@ -1,1 +1,1 @@
-module github.com/<%= username =>/<%= name =>
+module github.com/<%= username %>/<%= name %>

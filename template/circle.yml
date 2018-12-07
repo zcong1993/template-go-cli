@@ -10,10 +10,5 @@ jobs:
     steps:
       - checkout
       - run:
-          name: get deps
-          command: |<% if (godep) { %>
-            make install<% } else { %>
-            go get -t -d -v ./...<% } %>
-      - run:
           name: build
           command: make build
