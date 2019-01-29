@@ -52,6 +52,12 @@ module.exports = {
         message: 'Use a ci?',
         type: 'confirm',
         default: true
+      },
+      {
+        name: 'linter',
+        message: 'With gometalinter?',
+        type: 'confirm',
+        default: true
       }
     ]
   },
@@ -63,7 +69,8 @@ module.exports = {
         filters: {
           'circle.yml': 'test',
           'Makefile': 'cli',
-          '.goreleaser.yml': 'cli'
+          '.goreleaser.yml': 'cli',
+          '.gometalinter.json': 'linter'
         }
       },
       {
