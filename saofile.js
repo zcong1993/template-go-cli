@@ -54,8 +54,8 @@ module.exports = {
         default: true
       },
       {
-        name: 'linter',
-        message: 'With gometalinter?',
+        name: 'ci',
+        message: 'With golangci?',
         type: 'confirm',
         default: true
       }
@@ -70,7 +70,7 @@ module.exports = {
           'circle.yml': 'test',
           'Makefile': 'cli',
           '.goreleaser.yml': 'cli',
-          '.gometalinter.json': 'linter'
+          '.golangci.yml': 'ci'
         }
       },
       {
