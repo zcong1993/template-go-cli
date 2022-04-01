@@ -17,14 +17,14 @@ var (
 
 func main() {
 	cli.VersionPrinter = func(c *cli.Context) {
-		fmt.Println(buildVersion(version, commit, date, builtBy)) //nolint
+		fmt.Println(buildVersion(version, commit, date, builtBy))
 	}
 
 	app := &cli.App{
-		Name:  "boom",
+		Name:  "template-go-cli",
 		Usage: "make an explosive entrance",
 		Action: func(c *cli.Context) error {
-			fmt.Println("boom! I say!") //nolint
+			fmt.Println("boom! I say!")
 
 			return nil
 		},
