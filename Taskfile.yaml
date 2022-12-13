@@ -8,6 +8,7 @@ tasks:
       - setup:local
     cmds:
       - go install github.com/evilmartians/lefthook@latest
+      - lefthook install
 
   lint:
     deps:
