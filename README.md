@@ -5,6 +5,15 @@
 
 > golang cli template
 
+## Setup dev tools
+
+```bash
+# install task tool
+brew install go-task/tap/go-task
+# install dev tools local
+task setup
+```
+
 ## License
 
 MIT &copy; zcong1993

@@ -1,6 +1,6 @@
 module github.com/zcong1993/template-go-cli
 
-go 1.17
+go 1.19
 
 require github.com/urfave/cli/v2 v2.4.0
 

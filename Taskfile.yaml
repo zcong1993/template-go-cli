@@ -4,11 +4,41 @@ version: '3'
 
 tasks:
   setup:
+    deps:
+      - setup:local
     cmds:
-      - go install github.com/bwplotka/bingo@v0.6.0
-      - bingo get
-      - source .bingo/variables.env && $LEFTHOOK install
+      - go install github.com/evilmartians/lefthook@latest
 
   lint:
+    deps:
+      - setup:local
     cmds:
-      - source .bingo/variables.env && $GOLANGCI_LINT run --fast --fix
+      - ./bin/golangci-lint run --fast --fix
+
+  goimports:
+    deps:
+      - setup:goimports
+    cmds:
+      - ./bin/goimports {{.CLI_ARGS}}
+
+  setup:force:
+    cmds:
+      - rm -rf ./bin
+      - task: setup:local
+
+  setup:local:
+    deps:
+      - setup:goimports
+      - setup:golangci-lint
+
+  setup:goimports:
+    cmds:
+      - GOBIN=`pwd`/bin go install golang.org/x/tools/cmd/goimports@v0.1.11
+    status:
+      - test -f ./bin/goimports
+
+  setup:golangci-lint:
+    cmds:
+      - curl -SL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.50.1
+    status:
+      - test -f ./bin/golangci-lint
