@@ -7,4 +7,4 @@ pre-commit:
     lint:
       glob: "*.go"
       # consume {staged_files} so this command will trigger only when any *.go changed
-      run: task lint
+      run: task lint && git add {staged_files}
